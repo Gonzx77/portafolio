@@ -1,13 +1,40 @@
 @import url(variables.css);
 
+@font-face {
+    font-family: 'Bold';
+    src: url(../storage/fonts/ProtestStrike-Regular.ttf);
+}
+@font-face {
+    font-family: 'Regular';
+    src: url(../storage/fonts/TitilliumWeb-Light.ttf);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
     background-color: var(--colorB1);
+}
+
+
+#title{
+    text-shadow: 0px 0px 50px #ffffff40;
+    font-family: 'Bold', sans-serif;
+    color: var(--colorW);
+    letter-spacing: 10px;
+    font-size: 150px;
+}
+#description{
+    font-family: 'Regular', sans-serif;
+    color: var(--colorW);
+    font-size: 24px;
+    letter-spacing: 2px;
 }
