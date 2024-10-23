@@ -1,6 +1,14 @@
 const cursorDiv = document.querySelector('#cursorDiv');
 const cursorShadow = document.querySelector('#cursorDivShadow');
 
+setInterval(() => {
+    cursorShadow.style.animation = 'flicker 2s';
+    setTimeout(() => {
+        cursorShadow.style.animation = 'none';
+    }, 2000);
+}, 10000);
+
+
 let targetX = 0;
 let targetY = 0;
 const delay = 0.2;
