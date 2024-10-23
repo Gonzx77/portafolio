@@ -43,14 +43,26 @@ body{
 }
 #cursorDiv{
     position: absolute;
-    background-color: var(--colorB2);
-    width: 40px;
-    height: 40px;
+    background-color: #ffffff00;
+    width: 1px;
+    height: 1px;
     border-radius: 50%;
     box-shadow: 0px 0px 200px 60px var(--colorB2);
     z-index: +1;
 }
 
+.blacktest{
+    font-family: 'Regular';
+    z-index: +1;
+    color: var(--colorB1);
+    font-size: 40px;
+}
+#start{
+    transition: 0.2s;
+}
+#start:hover{
+    color: var(--colorB2);
+}
 
 
 .purple{

@@ -5,8 +5,8 @@ let targetY = 0;
 const delay = 0.2;
 
 document.addEventListener('mousemove', (event) => {
-    targetX = event.clientX - 20;
-    targetY = event.clientY - 20;
+    targetX = event.clientX - 0;
+    targetY = event.clientY - 0;
 });
 
 function actualizarPosicion() {
