@@ -1,6 +1,5 @@
 const cursorDiv = document.querySelector('#cursorDiv');
 const cursorShadow = document.querySelector('#cursorDivShadow');
-const particulas = document.querySelector('#particulas');
 
 let targetX = 0;
 let targetY = 0;
