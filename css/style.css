@@ -26,9 +26,21 @@ body{
     user-select: none;
     overflow: hidden;
 }
+#bgImg{
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+}
+#bgParticulas{
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    opacity: 0.2;
+}
 
 
 #title{
+    z-index: 3;
     text-shadow: 0px 0px 50px #ffffff40;
     font-family: 'Bold', sans-serif;
     color: var(--colorW);
@@ -36,6 +48,7 @@ body{
     font-size: 150px;
 }
 #description{
+    z-index: 3;
     font-family: 'Regular', sans-serif;
     color: var(--colorW);
     font-size: 24px;
@@ -43,12 +56,20 @@ body{
 }
 #cursorDiv{
     position: absolute;
-    background-color: #ffffff00;
-    width: 1px;
-    height: 1px;
+    background-color: #ffffff;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
-    box-shadow: 0px 0px 200px 60px var(--colorB2);
-    z-index: +1;
+    z-index: 4;
+}
+#cursorDivShadow{
+    position: absolute;
+    background-color: #ffffff00;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 300px 80px var(--colorB2);
+    z-index: 1;
 }
 
 .blacktest{
@@ -58,6 +79,7 @@ body{
     font-size: 40px;
 }
 #start{
+    z-index: 4;
     transition: 0.2s;
 }
 #start:hover{
