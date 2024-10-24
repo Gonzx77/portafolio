@@ -1,5 +1,68 @@
 const cursorDiv = document.querySelector('#cursorDiv');
 const cursorShadow = document.querySelector('#cursorDivShadow');
+const terminalText = document.querySelector('#terminalText');
+const terminal = document.querySelector('.terminal');
+
+const ejecutar = async() => {
+    const text = document.querySelector('#terminalText').value.trim();
+    if (text === 'start'){
+
+        const whiteScreen = document.getElementById('whiteScreen');
+        whiteScreen.style.opacity = 1;
+
+        setTimeout(() => {
+            document.querySelectorAll('body > *:not(.terminal):not(#cursorDiv):not(#cursorDivShadow):not(#whiteScreen)')
+                .forEach(el => el.style.display = 'none');
+
+            cursorShadow.style.display = 'none';
+            whiteScreen.style.opacity = 0;
+            terminalText.value = '';
+            terminalText.placeholder = '//type help';
+            terminal.style.position = 'fixed';
+            terminal.style.right = 0;
+            terminal.style.bottom = 0;
+        }, 1000);
+    } 
+    else if (text === 'help') {
+        terminalText.value = '';
+        terminalText.placeholder = 
+`// you can type:
+- start
+- github
+- reload
+- zx`;
+    }
+    else if (text === 'reload') {
+        location.reload();
+    }
+    else if (text === 'zx') {
+        terminalText.value = '';
+        window.open('https://zxofficial.github.io/ZXPagesProject/', '_blank');
+    }
+    else if (text === 'github') {
+        terminalText.value = '';
+        window.open('https://github.com/gonzx77', '_blank');
+    }
+    else {
+        terminalText.value = '';
+        terminalText.placeholder = 'error: command not found';
+    
+        setTimeout(() => {
+            terminalText.placeholder = '//type help';
+        }, 3000);
+    }
+}
+document.ejecutar = ejecutar;
+
+
+
+
+
+
+
+
+
+
 
 setInterval(() => {
     cursorShadow.style.animation = 'flicker 2s';

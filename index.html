@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <img id="bgImg" src="storage/images/background.svg">
+
     <img id="bgParticulas" src="storage/images/particulas.svg">
     <div id="cursorDiv"></div>
     <div id="cursorDivShadow"></div>
@@ -17,6 +17,21 @@
     <h1 id="title">Gon<span class="purple">z</span>x</h1>
     <p id="description">A full stack software developer</p>
 
-    <p class="blacktest" id="start">&lt;Start /&gt;</p>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+        <div class="terminal-body">
+            <textarea id="terminalText" placeholder="//type help"></textarea>
+            <div id="ejecutarBtn" onclick="ejecutar()">
+                <img id="ejecutarImg" src="/storage/images/executeArrow.svg">
+            </div>
+        </div>
+    </div>
+
+    <div id="whiteScreen"></div>
+
 </body>
 </html>
