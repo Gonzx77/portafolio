@@ -3,6 +3,12 @@ const cursorShadow = document.querySelector('#cursorDivShadow');
 const terminalText = document.querySelector('#terminalText');
 const terminal = document.querySelector('.terminal');
 
+document.getElementById('terminalText').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        ejecutar();
+    }
+});
 const ejecutar = async() => {
     const text = document.querySelector('#terminalText').value.trim();
     if (text === 'start'){
@@ -14,7 +20,23 @@ const ejecutar = async() => {
             document.querySelectorAll('body > *:not(.terminal):not(#cursorDiv):not(#cursorDivShadow):not(#whiteScreen)')
                 .forEach(el => el.style.display = 'none');
 
-            cursorShadow.style.display = 'none';
+            document.querySelectorAll('#portafolioGrid').forEach(el => {
+                    el.style.display = 'grid';
+                    el.style.backgroundColor = 'var(--colorW)';
+                });
+            document.querySelectorAll('.portafolioGridSection').forEach(el => {
+                    el.style.backgroundColor = 'var(--colorP1)';
+                });
+
+
+            document.querySelectorAll('#body')
+                .forEach(el => el.style.backgroundColor = 'var(--colorW)');
+
+            document.querySelectorAll('#cursorDiv')
+                .forEach(el => el.style.backgroundColor = 'var(--colorB)');
+
+
+            cursorShadow.style.boxShadow = '0px 0px 10px 1px var(--colorB)';
             whiteScreen.style.opacity = 0;
             terminalText.value = '';
             terminalText.placeholder = '//type help';
@@ -55,15 +77,6 @@ const ejecutar = async() => {
 document.ejecutar = ejecutar;
 
 
-
-
-
-
-
-
-
-
-
 setInterval(() => {
     cursorShadow.style.animation = 'flicker 2s';
     setTimeout(() => {
@@ -76,7 +89,6 @@ let targetX = 0;
 let targetY = 0;
 const delay = 0.2;
 const delayS = 0.05;
-
 document.addEventListener('mousemove', (event) => {
     targetX = event.clientX - 2;
     targetY = event.clientY - 2;
