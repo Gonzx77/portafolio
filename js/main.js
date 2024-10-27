@@ -22,21 +22,25 @@ const ejecutar = async() => {
 
             document.querySelectorAll('#portafolioGrid').forEach(el => {
                     el.style.display = 'grid';
-                    el.style.backgroundColor = 'var(--colorW)';
-                });
+                    el.style.backgroundColor = 'var(--colorB1)';
+            });
             document.querySelectorAll('.portafolioGridSection').forEach(el => {
-                    el.style.backgroundColor = 'var(--colorP1)';
-                });
+                    el.style.backgroundColor = 'var(--colorB1)';
+            });
 
+            document.querySelectorAll('.terminal')
+                .forEach(el => el.style.zIndex = '6');
 
             document.querySelectorAll('#body')
-                .forEach(el => el.style.backgroundColor = 'var(--colorW)');
+                .forEach(el => el.style.backgroundColor = 'var(--colorB1)');
 
-            document.querySelectorAll('#cursorDiv')
-                .forEach(el => el.style.backgroundColor = 'var(--colorB)');
+            document.querySelectorAll('#cursorDiv').forEach(el => {
+                el.style.backgroundColor = 'var(--colorW)';
+                el.style.zIndex = '5';
+            });
 
 
-            cursorShadow.style.boxShadow = '0px 0px 10px 1px var(--colorB)';
+            cursorShadow.style.boxShadow = '0px 0px 10px 0px var(--colorB1)';
             whiteScreen.style.opacity = 0;
             terminalText.value = '';
             terminalText.placeholder = '//type help';
