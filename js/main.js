@@ -18,10 +18,10 @@ const ejecutar = async() => {
 
         setTimeout(() => {
             document.querySelectorAll('body > *:not(.terminal):not(#cursorDiv):not(#cursorDivShadow):not(#whiteScreen)')
-                .forEach(el => el.style.display = 'none');
+                .forEach(el => el.style.visibility = 'hidden');
 
             document.querySelectorAll('#portafolioGrid').forEach(el => {
-                    el.style.display = 'grid';
+                    el.style.visibility = 'visible';
                     el.style.backgroundColor = 'var(--colorB1)';
             });
             document.querySelectorAll('.portafolioGridSection').forEach(el => {
