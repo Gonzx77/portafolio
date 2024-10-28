@@ -33,7 +33,6 @@ const ejecutar = async() => {
             document.querySelectorAll('.terminal').forEach(el => {
                 el.style.zIndex = '6';
                 el.style.marginRight = '20px';
-                el.style.marginBottom = '20px';
             });
 
             document.querySelectorAll('#body').forEach(el => {
