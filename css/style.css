@@ -5,6 +5,10 @@
     src: url(../storage/fonts/ProtestStrike-Regular.ttf);
 }
 @font-face {
+    font-family: 'Bold2';
+    src: url(../storage/fonts/TitilliumWeb-Bold.ttf);
+}
+@font-face {
     font-family: 'Regular';
     src: url(../storage/fonts/TitilliumWeb-Light.ttf);
 }
@@ -105,7 +109,7 @@ body{
 .terminal {
     margin-top: 20px;
     z-index: 4;
-    width: 500px;
+    min-width: 500px;
     height: 200px;
     background-color: #1e1e1e72;
     border-radius: 10px;
@@ -224,6 +228,7 @@ body{
 
 
 #portafolioGrid{
+    background-color: var(--colorB);
     visibility: hidden;
     position: absolute;
     width: 100%;
@@ -231,8 +236,42 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    padding: 20px;
+    gap: 20px;
+    overflow: auto;
+}
+#extraDiv{
+    display: none;
 }
 .portafolioGridSection{
+    min-height: 400px;
+    position: relative;
+    border-radius: 10px;
+    transition: 0.2s;
+    background-color: var(--colorB1);
+    padding: 20px;
+    border: none;
+}
+.portafolioGridSection:hover{
+    background-color: var(--colorB3);
+}
+.portafolioGridSection2{
+    grid-column: span 2;
+    min-height: 400px;
+    position: relative;
+    border-radius: 10px;
+    transition: 0.2s;
+    background-color: var(--colorB1);
+    padding: 20px;
+    border: none;
+}
+.portafolioGridSection2:hover{
+    background-color: var(--colorB3);
+}
+.portafolioGridSection3{
+    min-height: 400px;
+    position: relative;
+    padding: 20px;
     border: none;
 }
 
@@ -261,19 +300,47 @@ body{
 }
 #myName{
     color: var(--colorW);
-    font-size: 50px;
-    letter-spacing: 2px;
-    font-family: 'Bold';
+    font-size: 32px;
+    font-family: 'Bold2';
 }
 #myName2{
     color: var(--colorW);
     font-size: 30px;
     font-family: 'Regular';
 }
-#nameLine{
-    width: 100%;
-    height: 2px;
-    background-color: var(--colorB2);
+
+.portafolioTitle{
+    color: var(--colorW);
+    font-family: 'Bold2';
+    font-size: 30px;
+}
+.portafolioText{
+    margin-top: 20px;
+    color: var(--colorW);
+    font-size: 24px;
+    font-family: 'Regular';
+}
+
+#projectsBtn{
+    transition: 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Regular';
+    font-size: 30px;
+    color: var(--colorW);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 60px;
+    border: 2px solid var(--colorW);
+    border-radius: 10px;
+}
+#projectsBtn:hover{
+    color: var(--colorB1);
+    background-color: var(--colorW);
 }
 
 
@@ -288,4 +355,22 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+
+
+@media (max-width: 1350px) {
+    #portafolioGrid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .portafolioGridSection2{
+        grid-column: span 1;
+    }
+    #extraDiv{
+        display: block;
+    }
+    .terminal{
+        width: calc(100% - 40px);
+    }
 }

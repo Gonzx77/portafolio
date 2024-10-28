@@ -9,6 +9,12 @@ document.getElementById('terminalText').addEventListener('keydown', (event) => {
         ejecutar();
     }
 });
+
+const openZX = () => {
+    window.open('https://zxofficial.github.io/ZXPagesProject/', '_blank');
+}
+document.openZX = openZX;
+
 const ejecutar = async() => {
     const text = document.querySelector('#terminalText').value.trim();
     if (text === 'start'){
@@ -17,22 +23,23 @@ const ejecutar = async() => {
         whiteScreen.style.opacity = 1;
 
         setTimeout(() => {
-            document.querySelectorAll('body > *:not(.terminal):not(#cursorDiv):not(#cursorDivShadow):not(#whiteScreen)')
+            document.querySelectorAll('body > *:not(.terminal):not(#whiteScreen)')
                 .forEach(el => el.style.visibility = 'hidden');
 
             document.querySelectorAll('#portafolioGrid').forEach(el => {
                     el.style.visibility = 'visible';
-                    el.style.backgroundColor = 'var(--colorB1)';
-            });
-            document.querySelectorAll('.portafolioGridSection').forEach(el => {
-                    el.style.backgroundColor = 'var(--colorB1)';
             });
 
-            document.querySelectorAll('.terminal')
-                .forEach(el => el.style.zIndex = '6');
+            document.querySelectorAll('.terminal').forEach(el => {
+                el.style.zIndex = '6';
+                el.style.marginRight = '20px';
+                el.style.marginBottom = '20px';
+            });
 
-            document.querySelectorAll('#body')
-                .forEach(el => el.style.backgroundColor = 'var(--colorB1)');
+            document.querySelectorAll('#body').forEach(el => {
+                el.style.backgroundColor = 'var(--colorB1)';
+                el.style.cursor = 'default';
+            });
 
             document.querySelectorAll('#cursorDiv').forEach(el => {
                 el.style.backgroundColor = 'var(--colorW)';
