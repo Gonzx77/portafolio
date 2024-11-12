@@ -227,7 +227,7 @@ body{
 
 
 #portafolioGrid{
-    background-color: var(--colorB3);
+    background-color: var(--colorW);
     visibility: hidden;
     position: absolute;
     width: 100%;
@@ -247,14 +247,10 @@ body{
     position: relative;
     border-radius: 10px;
     transition: 0.2s;
-    background-color: var(--colorB3);
-    box-shadow: 0px 0px 0px 2px var(--colorB1);
+    box-shadow: 0px 0px 20px 0px var(--colorB1);
+    background-color: var(--colorB1-40);
     padding: 20px;
     border: none;
-}
-.portafolioGridSection:hover{
-    box-shadow: 0px 0px 20px 0px var(--colorB1);
-    background-color: var(--colorB1);
 }
 .portafolioGridSection2{
     grid-column: span 2;
@@ -262,14 +258,10 @@ body{
     position: relative;
     border-radius: 10px;
     transition: 0.2s;
-    background-color: var(--colorB3);
-    box-shadow: 0px 0px 0px 2px var(--colorB1);
+    box-shadow: 0px 0px 20px 0px var(--colorB1);
+    background-color: var(--colorB1-40);
     padding: 20px;
     border: none;
-}
-.portafolioGridSection2:hover{
-    box-shadow: 0px 0px 20px 0px var(--colorB1);
-    background-color: var(--colorB1);
 }
 .portafolioGridSection3{
     display: flex;
@@ -278,8 +270,8 @@ body{
     font-family: 'Regular';
     color: var(--colorW);
     font-size: 30px;
-    background-color: var(--colorB1);
     box-shadow: 0px 0px 20px 0px var(--colorB1);
+    background-color: var(--colorB1-40);
     border-radius: 10px;
     min-height: 520px;
     position: relative;
@@ -353,6 +345,28 @@ body{
 #projectsBtn:hover{
     color: var(--colorB1);
     background-color: var(--colorW);
+}
+
+#infoGrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+#trazoImg{
+    filter: invert();
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    margin-left: calc((100% - 100px) / 2);
+    margin-bottom: 40px;
+}
+#misionImg{
+    width: 100px;
+    filter: invert();
+}
+#visionImg{
+    width: 100px;
+    filter: invert();
 }
 
 
